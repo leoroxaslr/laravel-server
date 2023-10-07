@@ -54,4 +54,15 @@ class ProductController extends Controller
        Product::destroy($id);
        return ['message' => 'Product Deleted'];
     }
+
+    /**
+     * search for a name
+
+     */
+
+    public function search($name)
+    {
+      return Product::where('name','like','%'.$name.'%')->get();
+
+    }
 }
